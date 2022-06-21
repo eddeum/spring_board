@@ -8,9 +8,16 @@
 
   <div th:replace="header.html::header"></div>
   <h3>글 목록 페이지</h3>
-    <table>
+  <div class="container" id="boardlist">
+      <a href="/board/write">게시물쓰기</a>
 
-    </table>
+      <div id="categorybox"></div>
+
+      <table class="table" id="boardtable">
+
+      </table>
+  </div>
+
 
 <!-- 사용자정의 js -->
 <script src="/js/board/list.js"></script>

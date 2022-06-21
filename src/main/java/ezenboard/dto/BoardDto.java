@@ -14,6 +14,8 @@ public class BoardDto {
     private String bwriter;
     private String bpassword;
 
+    private String category;    // 카테고리
+
     // dto -> entity 변환
     public BoardEntity toentity(){
         return BoardEntity.builder()

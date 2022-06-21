@@ -18,4 +18,9 @@ public class BoardEntity {
     private String bcontent;
     private String bwriter;
     private String bpassword;
+
+    // 카테고리와 연관관계
+    @ManyToOne
+    @JoinColumn(name = "cno")
+    private CategoryEntity categoryEntity;
 }

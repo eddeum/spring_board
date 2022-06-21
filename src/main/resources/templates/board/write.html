@@ -10,11 +10,17 @@
 
   <h3>글 등록 페이지</h3>
     <form id="boardform">
+        카테고리
+        <select name="category">
+            <option value="자유게시판">자유게시판</option>
+            <option value="질문게시판">질문게시판</option>
+        </select>
+
         글 제목 : <input type="text" name="btitle">
         글 내용 : <input type="text" name="bcontent">
         작성자 : <input type="text" name="bwriter">
         비밀번호 : <input type="text" name="bpassword">
-        <button type="button" onclick="boardwrite()">글 등록</button>
+        <button type="button" onclick="board_write()">글 등록</button>
     </form>
 
 <!-- 사용자정의 js -->
