@@ -64,9 +64,24 @@ public class BoardService {
     } // 게시물 등록 end
 
     // 2-1. R(전체게시물 조회)
-    public JSONArray getboardlist(int cno){
+    public JSONArray getboardlist(int cno, String key, String keyword){
         JSONArray jsonArray = new JSONArray();
-        List<BoardEntity> boardEntitylist = boardRepository.findAll();
+
+        // 선언
+        List<BoardEntity> boardEntitylist = null;
+
+        // 필드에 따른 검색 기능
+        if(key.equals("btitle")){
+            boardEntitylist = boardRepository.fingBybtitle();
+        }else if(key.equals("bcontent")){
+            boardEntitylist = boardRepository.fingBybcontent();
+        }else if(key.equals("bwriter")){
+            boardEntitylist = boardRepository.fingBybwriter();
+        }else{ // 검색한 내용이 없으면
+
+        } // else end
+
+
         // 엔티티 -> json 변환
         for(BoardEntity entity : boardEntitylist){
             if(entity.getCategoryEntity().getCno() == cno){

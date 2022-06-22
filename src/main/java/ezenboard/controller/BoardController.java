@@ -52,11 +52,12 @@ public class BoardController {
 
     // 모든게시물출력 처리 매핑
     @GetMapping("/getboardlist")
-    public void getboardlist(HttpServletResponse response, @RequestParam("cno") int cno){
+    public void getboardlist(HttpServletResponse response, @RequestParam("cno") int cno
+                        , @RequestParam("key") String key, @RequestParam("keyword") String keyword){
         try{
             response.setCharacterEncoding("UTF-8");
             response.setContentType("application/json");
-            response.getWriter().println(boardService.getboardlist(cno) );
+            response.getWriter().println(boardService.getboardlist(cno, key, keyword) );
         }catch(Exception e){System.out.println("board컨트롤러 boardlist 오류"+e);}
     }
 
